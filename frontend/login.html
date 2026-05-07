@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Career101</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body class="bg-[#0f172a] text-white overflow-hidden h-screen flex flex-col justify-center items-center">
+
+    <!-- Background Elements -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2" style="opacity: 0.3;"></div>
+
+    <div class="w-full max-w-md px-4 page-transition">
+        <div class="glass p-8 rounded-2xl shadow-2xl relative">
+            <div class="text-center mb-8">
+                <a href="index.html" class="flex items-center justify-center gap-2 text-2xl font-bold mb-2 hover:opacity-80 transition cursor-pointer">
+                    <img src="assets/logo.svg" alt="Career101 Logo" style="height: 36px; object-fit: contain;">
+                </a>
+                <h2 class="text-2xl font-semibold">Welcome Back</h2>
+                <p class="text-gray-400 text-sm mt-1">Access your personalized career profile</p>
+            </div>
+
+            <form id="loginForm" class="space-y-6">
+                <div id="error-message" class="hidden bg-red-500/20 border border-red-500/50 text-red-200 text-sm p-3 rounded-lg text-center"></div>
+                
+                <div>
+                    <label class="block text-sm font-medium text-gray-300 mb-1">Email Address</label>
+                    <input type="email" id="email" required class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition">
+                </div>
+                
+                <div>
+                    <div class="flex justify-between mb-1">
+                        <label class="block text-sm font-medium text-gray-300">Password</label>
+                        <a href="#" class="text-sm text-indigo-400 hover:text-indigo-300">Forgot?</a>
+                    </div>
+                    <input type="password" id="password" required class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition">
+                </div>
+                
+                <button type="submit" class="w-full py-3 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white font-medium transition shadow-lg btn-glow flex justify-center items-center">
+                    <span id="btn-text">Sign In</span>
+                    <div id="btn-spinner" class="hidden ml-2 w-4 h-4 border-2 border-white/20 border-t-white rounded-full animate-spin"></div>
+                </button>
+            </form>
+
+            <div class="mt-6 text-center text-sm text-gray-400">
+                Don't have an account? <a href="register.html" class="text-indigo-400 hover:text-indigo-300 font-medium">Create one</a>
+            </div>
+            
+            <div class="mt-4 text-center">
+                <a href="dashboard.html" class="text-xs text-gray-500 hover:text-white transition">Continue as Guest</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/auth.js"></script>
+</body>
+</html>
+

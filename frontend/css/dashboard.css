@@ -1,0 +1,164 @@
+/* dashboard.css - Page-Wise (Snap Scroll) Layout */
+
+/* Ensure the body and html have 100% height and hide overflow on html to prevent double scrolling */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden; /* Hide normal scrollbars */
+}
+
+/* The main container acts as the scroll snap wrapper */
+.scroll-container {
+    width: 100%;
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    /* Hide scrollbar for a cleaner look */
+    scrollbar-width: none; 
+    -ms-overflow-style: none;
+}
+.scroll-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* Each section is exactly one viewport tall, ensuring perfect snapping */
+.page-section {
+    width: 100%;
+    height: 100vh;
+    min-height: 100vh;
+    scroll-snap-align: start;
+    position: relative;
+    /* Center content nicely */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 80px; /* Space for fixed navbar */
+    overflow: hidden;
+    /* Default background setup */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Dark overlay so text is readable over images */
+.page-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(15,23,42,0.7), rgba(15,23,42,0.95));
+    z-index: 1;
+}
+
+/* Ensure content stays above the overlay */
+.page-content {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+/* Specific Page Backgrounds */
+#section-welcome {
+    background-image: url('../assets/welcome_bg.png');
+}
+#section-analytics {
+    background-image: url('../assets/analytics_bg.png');
+}
+#section-roadmap {
+    background-image: url('../assets/roadmap_bg.png');
+}
+
+/* Make sure the navbar stays fixed on top, irrespective of scroll */
+.fixed-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    background: rgba(15, 23, 42, 0.8) !important;
+    backdrop-filter: blur(12px) !important;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+/* Section Indictors (Dots on the side to show page progress) */
+.page-indicators {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.indicator-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+.indicator-dot:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+.indicator-dot.active {
+    background: transparent;
+    border-color: #6366f1; /* indigo-500 */
+    box-shadow: inset 0 0 0 2px rgba(99, 102, 241, 0.5);
+    transform: scale(1.3);
+}
+
+/* Adjustments for existing dashboard components so they fit in the vh layout */
+.glass {
+    max-height: 90vh; /* Don't exceed screen size */
+    overflow-y: auto;
+}
+.glass::-webkit-scrollbar {
+    width: 6px;
+}
+.glass::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0.1);
+}
+.glass::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.2);
+    border-radius: 4px;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+@media (min-width: 1024px) {
+    .dashboard-grid {
+        grid-template-columns: 350px 1fr;
+    }
+}
+
+/* Enhance title typography for full pages */
+.section-title {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+.section-subtitle {
+    font-size: 1.25rem;
+    color: #94a3b8;
+    max-width: 600px;
+    margin-bottom: 2rem;
+}

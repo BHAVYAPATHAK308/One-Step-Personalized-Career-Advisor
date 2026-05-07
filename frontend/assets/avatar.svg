@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" id="ai-avatar-svg">
+  <defs>
+    <linearGradient id="gradientProfile" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1" />
+      <stop offset="100%" stop-color="#4f46e5" />
+    </linearGradient>
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="rgba(79, 70, 229, 0.4)" />
+    </filter>
+  </defs>
+
+  <!-- Outer Ring / Border -->
+  <circle cx="50" cy="50" r="48" fill="#1e1b4b" stroke="url(#gradientProfile)" stroke-width="2" filter="url(#softShadow)" />
+
+  <!-- Inner Background to give it a nice gradient backdrop -->
+  <circle cx="50" cy="50" r="44" fill="url(#gradientProfile)" opacity="0.1" />
+
+  <!-- Abstract Professional Silhouette -->
+  <!-- Head -->
+  <circle cx="50" cy="38" r="14" fill="#ffffff" />
+  
+  <!-- Shoulders / Body -->
+  <path d="M 28 80 C 28 65, 40 56, 50 56 C 60 56, 72 65, 72 80 Z" fill="#ffffff" />
+  
+  <!-- Subtle Suit/Lapel Details for a professional look -->
+  <path d="M 44 80 L 50 66 L 56 80" fill="none" stroke="#e0e7ff" stroke-width="1.5" />
+  
+</svg>

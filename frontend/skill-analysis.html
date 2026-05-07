@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill Gap Analysis - Career101</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body class="bg-[#0f172a] text-white overflow-x-hidden min-h-screen pb-10">
+
+    <div class="blob blob-3"></div>
+
+    <nav class="glass sticky top-0 z-50 px-6 py-4 flex justify-between items-center mb-8">
+        <a href="index.html" class="flex items-center gap-3 text-2xl font-bold hover:opacity-80 transition cursor-pointer">
+            <img src="assets/logo.svg" alt="Career101 Logo" style="height: 36px; object-fit: contain;">
+        </a>
+        <div>
+            <a href="dashboard.html" class="px-5 py-2 rounded-full border border-gray-500 text-gray-300 hover:bg-gray-800 transition">Dashboard</a>
+        </div>
+    </nav>
+
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 page-transition">
+        <div class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Skill Gap <span class="text-gradient">Analysis</span></h1>
+            <p class="text-gray-400">See exactly what skills you need to develop to reach your target career.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+            <!-- Radar Chart Wrapper -->
+            <div class="glass p-8 rounded-2xl flex flex-col items-center justify-center">
+                <h3 class="text-xl font-semibold mb-6">Current vs. Required Skills</h3>
+                <div class="w-full h-80 relative">
+                    <canvas id="detailedRadarChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Detailed Breakdowns -->
+            <div class="flex flex-col gap-6">
+                
+                <div class="glass p-6 rounded-2xl">
+                    <h3 class="text-lg font-semibold mb-6 flex items-center gap-2"><span class="text-indigo-400">🔧</span> Technical Skills Needs</h3>
+                    
+                    <div class="mb-4">
+                        <div class="flex justify-between text-sm mb-1">
+                            <span class="text-gray-300">JavaScript / React</span>
+                            <span class="text-indigo-400 font-medium">Gap: 30%</span>
+                        </div>
+                        <div class="h-2 w-full bg-gray-700 rounded-full overflow-hidden flex">
+                            <div class="h-full bg-indigo-500" style="width: 50%;"></div>
+                            <div class="h-full bg-indigo-500/30 border-r border-indigo-400 border-dashed relative" style="width: 30%;">
+                                <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPjxyZWN0IHdpZHRoPSI0IiBoZWlnaHQ9IjQiIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4xIi8+PC9zdmc+')] opacity-50"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <div class="flex justify-between text-sm mb-1">
+                            <span class="text-gray-300">System Design</span>
+                            <span class="text-rose-400 font-medium">Gap: 60%</span>
+                        </div>
+                        <div class="h-2 w-full bg-gray-700 rounded-full overflow-hidden flex">
+                            <div class="h-full bg-rose-500" style="width: 20%;"></div>
+                            <div class="h-full bg-rose-500/30 border-r border-rose-400 border-dashed relative" style="width: 60%;">
+                                <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPjxyZWN0IHdpZHRoPSI0IiBoZWlnaHQ9IjQiIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4xIi8+PC9zdmc+')] opacity-50"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="glass p-6 rounded-2xl">
+                    <h3 class="text-lg font-semibold mb-6 flex items-center gap-2"><span class="text-emerald-400">🧠</span> Soft Skills Check</h3>
+                    
+                    <div class="mb-4">
+                        <div class="flex justify-between text-sm mb-1">
+                            <span class="text-gray-300">Communication</span>
+                            <span class="text-emerald-400 font-medium">No Gap</span>
+                        </div>
+                        <div class="h-2 w-full bg-gray-700 rounded-full overflow-hidden flex">
+                            <div class="h-full bg-emerald-500" style="width: 100%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <div class="flex justify-between text-sm mb-1">
+                            <span class="text-gray-300">Leadership & Management</span>
+                            <span class="text-amber-400 font-medium">Gap: 20%</span>
+                        </div>
+                        <div class="h-2 w-full bg-gray-700 rounded-full overflow-hidden flex">
+                            <div class="h-full bg-amber-500" style="width: 60%;"></div>
+                            <div class="h-full bg-amber-500/30 border-r border-amber-400 border-dashed relative" style="width: 20%;"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script to init the radar chart here since it's page specific -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+             Chart.defaults.color = '#94a3b8';
+             const ctx = document.getElementById('detailedRadarChart').getContext('2d');
+             new Chart(ctx, {
+                 type: 'radar',
+                 data: {
+                    labels: ['Algorithm Design', 'Frontend (React)', 'Backend (Node)', 'Database Architecture', 'DevOps', 'System Design'],
+                    datasets: [{
+                        label: 'Your Current Level',
+                        data: [60, 50, 45, 30, 20, 20],
+                        fill: true,
+                        backgroundColor: 'rgba(59, 130, 246, 0.3)',
+                        borderColor: 'rgb(59, 130, 246)',
+                        pointBackgroundColor: 'rgb(59, 130, 246)',
+                    }, {
+                        label: 'Required Software Engineer Level',
+                        data: [85, 80, 85, 75, 60, 80],
+                        fill: true,
+                        backgroundColor: 'rgba(139, 92, 246, 0.1)',
+                        borderColor: 'rgb(139, 92, 246)',
+                        borderDash: [5, 5],
+                        pointBackgroundColor: 'rgb(139, 92, 246)',
+                    }]
+                 },
+                 options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        r: {
+                            angleLines: { color: 'rgba(255, 255, 255, 0.1)' },
+                            grid: { color: 'rgba(255, 255, 255, 0.1)' },
+                            pointLabels: { color: '#f8fafc', font: { size: 12 } },
+                            ticks: { display: false, max: 100, min: 0 }
+                        }
+                    }
+                 }
+             });
+        });
+    </script>
+    <script src="js/main.js"></script>
+</body>
+</html>
+

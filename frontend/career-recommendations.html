@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Recommendations - Career101</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body class="bg-[#0f172a] text-white overflow-x-hidden min-h-screen pb-10">
+
+    <div class="blob blob-2" style="opacity: 0.4; top: 20%; left: -10%;"></div>
+    <div class="blob blob-1" style="opacity: 0.3; bottom: 10%; right: -10%;"></div>
+
+    <!-- Navigation -->
+    <nav class="glass sticky top-0 z-50 px-6 py-4 flex justify-between items-center mb-8">
+        <a href="index.html" class="flex items-center gap-3 text-2xl font-bold hover:opacity-80 transition cursor-pointer">
+            <img src="assets/logo.svg" alt="Career101 Logo" style="height: 36px; object-fit: contain;">
+        </a>
+        <div>
+            <a href="dashboard.html" class="px-5 py-2 rounded-full border border-gray-500 text-gray-300 hover:bg-gray-800 transition">Dashboard</a>
+        </div>
+    </nav>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 page-transition">
+        <div class="text-center mb-16">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4" data-aos="fade-down">Top <span class="text-gradient">Career Matches</span></h1>
+            <p class="text-gray-400 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">Based on your skills, interests, and logic scores from the aptitude test, our AI has curated the finest career options for your future.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- Career Card 1 -->
+            <div class="glass p-6 rounded-2xl glass-hover group" data-aos="fade-up" data-aos-delay="200">
+                <div class="h-40 rounded-xl mb-6 flex items-center justify-center bg-gradient-to-br from-indigo-900 to-indigo-600 relative overflow-hidden group-hover:scale-[1.02] transition-transform">
+                    <span class="text-6xl absolute z-10 drop-shadow-lg">💻</span>
+                    <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition"></div>
+                </div>
+                <div class="flex justify-between items-start mb-2">
+                    <h3 class="text-xl font-bold text-white">Full Stack Software Engineer</h3>
+                    <span class="bg-indigo-500/20 text-indigo-300 px-2 py-1 rounded text-xs">96% Match</span>
+                </div>
+                <p class="text-gray-400 text-sm mb-4">Design, develop, and maintain front-end and back-end web architecture.</p>
+                <div class="space-y-2 mb-6 border-t border-white/10 pt-4 mt-4 text-sm text-gray-300">
+                    <div class="flex justify-between"><span>💰 Average Salary:</span> <span class="text-green-400 font-medium">$110,000</span></div>
+                    <div class="flex justify-between"><span>📈 Future Demand:</span> <span class="text-emerald-400 font-medium">Very High</span></div>
+                    <div class="flex justify-between"><span>🛠️ Key Skills:</span> <span>JS, React, Node</span></div>
+                </div>
+                <button onclick="openRoadmap('Full Stack Software Engineer')" class="w-full py-2 rounded-lg bg-indigo-600/20 text-indigo-300 border border-indigo-500/30 hover:bg-indigo-600 hover:text-white transition">View Roadmap</button>
+            </div>
+
+            <!-- Career Card 2 -->
+            <div class="glass p-6 rounded-2xl glass-hover group" data-aos="fade-up" data-aos-delay="300">
+                <div class="h-40 rounded-xl mb-6 flex items-center justify-center bg-gradient-to-br from-emerald-900 to-emerald-600 relative overflow-hidden group-hover:scale-[1.02] transition-transform">
+                    <span class="text-6xl absolute z-10 drop-shadow-lg">📊</span>
+                    <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition"></div>
+                </div>
+                <div class="flex justify-between items-start mb-2">
+                    <h3 class="text-xl font-bold text-white">Data Scientist</h3>
+                    <span class="bg-emerald-500/20 text-emerald-300 px-2 py-1 rounded text-xs">88% Match</span>
+                </div>
+                <p class="text-gray-400 text-sm mb-4">Analyze complex datasets and build predictive machine learning models.</p>
+                <div class="space-y-2 mb-6 border-t border-white/10 pt-4 mt-4 text-sm text-gray-300">
+                    <div class="flex justify-between"><span>💰 Average Salary:</span> <span class="text-green-400 font-medium">$125,000</span></div>
+                    <div class="flex justify-between"><span>📈 Future Demand:</span> <span class="text-emerald-400 font-medium">Exceptional</span></div>
+                    <div class="flex justify-between"><span>🛠️ Key Skills:</span> <span>Python, SQL, ML</span></div>
+                </div>
+                <button onclick="openRoadmap('Data Scientist')" class="w-full py-2 rounded-lg bg-emerald-600/20 text-emerald-300 border border-emerald-500/30 hover:bg-emerald-600 hover:text-white transition">View Roadmap</button>
+            </div>
+
+            <!-- Career Card 3 -->
+            <div class="glass p-6 rounded-2xl glass-hover group" data-aos="fade-up" data-aos-delay="400">
+                <div class="h-40 rounded-xl mb-6 flex items-center justify-center bg-gradient-to-br from-pink-900 to-pink-600 relative overflow-hidden group-hover:scale-[1.02] transition-transform">
+                    <span class="text-6xl absolute z-10 drop-shadow-lg">🎨</span>
+                    <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition"></div>
+                </div>
+                <div class="flex justify-between items-start mb-2">
+                    <h3 class="text-xl font-bold text-white">UI/UX Designer</h3>
+                    <span class="bg-pink-500/20 text-pink-300 px-2 py-1 rounded text-xs">75% Match</span>
+                </div>
+                <p class="text-gray-400 text-sm mb-4">Create beautiful, intuitive interfaces focused on user experience.</p>
+                <div class="space-y-2 mb-6 border-t border-white/10 pt-4 mt-4 text-sm text-gray-300">
+                    <div class="flex justify-between"><span>💰 Average Salary:</span> <span class="text-green-400 font-medium">$85,000</span></div>
+                    <div class="flex justify-between"><span>📈 Future Demand:</span> <span class="text-emerald-400 font-medium">High</span></div>
+                    <div class="flex justify-between"><span>🛠️ Key Skills:</span> <span>Figma, Research</span></div>
+                </div>
+                <button onclick="openRoadmap('UI/UX Designer')" class="w-full py-2 rounded-lg bg-pink-600/20 text-pink-300 border border-pink-500/30 hover:bg-pink-600 hover:text-white transition">View Roadmap</button>
+            </div>
+
+             <!-- Career Card 4 -->
+             <div class="glass p-6 rounded-2xl glass-hover group" data-aos="fade-up" data-aos-delay="500">
+                <div class="h-40 rounded-xl mb-6 flex items-center justify-center bg-gradient-to-br from-amber-900 to-amber-600 relative overflow-hidden group-hover:scale-[1.02] transition-transform">
+                    <span class="text-6xl absolute z-10 drop-shadow-lg">👔</span>
+                    <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition"></div>
+                </div>
+                <div class="flex justify-between items-start mb-2">
+                    <h3 class="text-xl font-bold text-white">Product Manager</h3>
+                    <span class="bg-amber-500/20 text-amber-300 px-2 py-1 rounded text-xs">68% Match</span>
+                </div>
+                <p class="text-gray-400 text-sm mb-4">Guide the lifecycle of digital products from conception to launch.</p>
+                <div class="space-y-2 mb-6 border-t border-white/10 pt-4 mt-4 text-sm text-gray-300">
+                    <div class="flex justify-between"><span>💰 Average Salary:</span> <span class="text-green-400 font-medium">$130,000</span></div>
+                    <div class="flex justify-between"><span>📈 Future Demand:</span> <span class="text-emerald-400 font-medium">High</span></div>
+                    <div class="flex justify-between"><span>🛠️ Key Skills:</span> <span>Leadership, Agile</span></div>
+                </div>
+                <button onclick="openRoadmap('Product Manager')" class="w-full py-2 rounded-lg bg-amber-600/20 text-amber-300 border border-amber-500/30 hover:bg-amber-600 hover:text-white transition">View Roadmap</button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Roadmap Modal -->
+    <div id="roadmap-modal" class="fixed inset-0 z-[100] bg-black/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
+        <div class="glass max-w-2xl w-full p-8 rounded-2xl relative shadow-2xl border border-white/10" style="animation: scaleIn 0.3s ease-out forwards;">
+            <button onclick="closeRoadmap()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-2xl transition">&times;</button>
+            
+            <h2 id="modal-title" class="text-3xl font-bold mb-2 text-gradient">Learning Roadmap</h2>
+            <p class="text-gray-400 mb-6">Here is your step-by-step guide to achieving this career.</p>
+            
+            <div class="space-y-4" id="modal-steps">
+                <a href="#" target="_blank" class="block glass p-4 rounded-xl border-l-4 border-indigo-500 hover:bg-white/10 hover:scale-[1.02] transition-all cursor-pointer shadow-lg hover:shadow-indigo-500/20">
+                    <h3 class="font-bold text-lg text-white group-hover:text-indigo-400 transition-colors">Step 1: Core Fundamentals (Months 1-2)</h3>
+                    <p class="text-sm text-gray-400 mt-1">Master the basic building blocks and theoretical concepts required for this field. Take introductory courses and build small practice projects. <span class="text-indigo-400 text-xs ml-2 select-none">Click to view courses &rarr;</span></p>
+                </a>
+                <a href="#" target="_blank" class="block glass p-4 rounded-xl border-l-4 border-emerald-500 hover:bg-white/10 hover:scale-[1.02] transition-all cursor-pointer shadow-lg hover:shadow-emerald-500/20">
+                    <h3 class="font-bold text-lg text-white group-hover:text-emerald-400 transition-colors">Step 2: Advanced Techniques (Months 3-5)</h3>
+                    <p class="text-sm text-gray-400 mt-1">Dive deep into advanced frameworks, methodologies, and specific tools used by industry professionals. <span class="text-emerald-400 text-xs ml-2 select-none">Click to view courses &rarr;</span></p>
+                </a>
+                <a href="#" target="_blank" class="block glass p-4 rounded-xl border-l-4 border-amber-500 hover:bg-white/10 hover:scale-[1.02] transition-all cursor-pointer shadow-lg hover:shadow-amber-500/20">
+                    <h3 class="font-bold text-lg text-white group-hover:text-amber-400 transition-colors">Step 3: Portfolio Building (Month 6)</h3>
+                    <p class="text-sm text-gray-400 mt-1">Create 2-3 capstone projects that simulate real-world problems. Polish your resume and start applying. <span class="text-amber-400 text-xs ml-2 select-none">Click to view projects &rarr;</span></p>
+                </a>
+            </div>
+            
+            <div class="mt-8 text-center">
+                <button onclick="closeRoadmap()" class="px-6 py-2 rounded-full border border-gray-500 text-gray-300 hover:bg-gray-800 transition">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        @keyframes scaleIn {
+            from { transform: scale(0.95); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+    </style>
+
+    <script>
+        function openRoadmap(career) {
+            document.getElementById('modal-title').innerText = career + ' Roadmap';
+            
+            // Generate dummy links pointing to search for the specific career to make it fully functional
+            const searchQuery = encodeURIComponent(career + ' courses');
+            const links = document.querySelectorAll('#modal-steps a');
+            links.forEach(a => a.href = `https://www.coursera.org/search?query=${searchQuery}`);
+
+            document.getElementById('roadmap-modal').classList.remove('hidden');
+        }
+        function closeRoadmap() {
+            document.getElementById('roadmap-modal').classList.add('hidden');
+        }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
+

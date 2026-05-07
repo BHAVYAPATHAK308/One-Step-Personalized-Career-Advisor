@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Comparison - Career101</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body class="bg-[#0f172a] text-white overflow-x-hidden min-h-screen pb-10">
+
+    <div class="blob blob-1" style="opacity: 0.2"></div>
+
+    <nav class="glass sticky top-0 z-50 px-6 py-4 flex justify-between items-center mb-8">
+        <a href="index.html" class="flex items-center gap-3 text-2xl font-bold hover:opacity-80 transition cursor-pointer">
+            <img src="assets/logo.svg" alt="Career101 Logo" style="height: 36px; object-fit: contain;">
+        </a>
+        <div>
+            <a href="dashboard.html" class="px-5 py-2 rounded-full border border-gray-500 text-gray-300 hover:bg-gray-800 transition">Dashboard</a>
+        </div>
+    </nav>
+
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 page-transition">
+        <div class="text-center mb-12">
+            <h1 class="text-4xl font-bold mb-4">Compare <span class="text-gradient">Careers</span></h1>
+            <p class="text-gray-400">Evaluate your options side-by-side to make the best decision for your future.</p>
+        </div>
+
+        <div class="glass rounded-2xl overflow-hidden">
+            <!-- Headers -->
+            <div class="grid grid-cols-3 bg-white/5 border-b border-white/10">
+                <div class="p-6 flex items-center justify-center font-bold text-gray-400 uppercase tracking-wider text-sm">
+                    Criteria
+                </div>
+                <div class="p-6 text-center border-l border-white/10 group cursor-pointer hover:bg-white/5 transition">
+                    <div class="text-5xl mb-2 drop-shadow-md group-hover:scale-110 transition-transform">💻</div>
+                    <h3 class="text-xl font-bold text-indigo-300">Software Engineer</h3>
+                </div>
+                <div class="p-6 text-center border-l border-white/10 group cursor-pointer hover:bg-white/5 transition">
+                    <div class="text-5xl mb-2 drop-shadow-md group-hover:scale-110 transition-transform">📊</div>
+                    <h3 class="text-xl font-bold text-emerald-300">Data Scientist</h3>
+                </div>
+            </div>
+
+            <!-- Rows -->
+            <div class="grid grid-cols-3 border-b border-white/5 hover:bg-white/5 transition">
+                <div class="p-5 font-medium text-gray-300 flex items-center">Average Salary</div>
+                <div class="p-5 text-center border-l border-white/5 text-green-400 font-bold">$110,000</div>
+                <div class="p-5 text-center border-l border-white/5 text-green-400 font-bold">$125,000</div>
+            </div>
+
+            <div class="grid grid-cols-3 border-b border-white/5 hover:bg-white/5 transition">
+                <div class="p-5 font-medium text-gray-300 flex items-center">Job Demand (10y Growth)</div>
+                <div class="p-5 text-center border-l border-white/5 text-white">22% <span class="text-xs text-gray-400">(Very High)</span></div>
+                <div class="p-5 text-center border-l border-white/5 text-white">31% <span class="text-xs text-gray-400">(Exceptional)</span></div>
+            </div>
+
+            <div class="grid grid-cols-3 border-b border-white/5 hover:bg-white/5 transition">
+                <div class="p-5 font-medium text-gray-300 flex items-center">Core Focus</div>
+                <div class="p-5 text-center border-l border-white/5 text-gray-400 text-sm">Building software applications, APIs, UI, and maintaining systems.</div>
+                <div class="p-5 text-center border-l border-white/5 text-gray-400 text-sm">Extracting meaningful insights from massive datasets using statistics and ML.</div>
+            </div>
+
+            <div class="grid grid-cols-3 border-b border-white/5 hover:bg-white/5 transition overflow-hidden">
+                <div class="p-5 font-medium text-gray-300 flex items-center">Work-Life Balance</div>
+                <div class="p-5 text-center border-l border-white/5">
+                    <div class="flex justify-center text-amber-500">★★★★☆</div>
+                </div>
+                <div class="p-5 text-center border-l border-white/5">
+                    <div class="flex justify-center text-amber-500">★★★★☆</div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-3 hover:bg-white/5 transition">
+                <div class="p-5 flex items-center"></div>
+                <div class="p-6 text-center border-l border-white/5">
+                    <button class="px-6 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white font-medium transition btn-glow">Select Path</button>
+                </div>
+                <div class="p-6 text-center border-l border-white/5">
+                    <button class="px-6 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-medium transition btn-glow">Select Path</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
+
